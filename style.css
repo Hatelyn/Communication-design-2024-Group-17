@@ -23,7 +23,22 @@ footer{
     text-decoration: underline;
 }
 
-button{
+#menu {
+    float: left;
+    width: 20%;
+  }
+
+#main {
+    width: 60%;
+    
+    overflow: hidden;
+  }
+
+#footer {
+    width: 60;
+}
+
+#button{
     font-size: 40px;
     padding: 20px;
     margin-top: 10px;
@@ -34,3 +49,9 @@ button:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
+@media only screen and (max-width:500px) {
+    #menu, #main, #footer, #button {
+      width: 100%;
+    }
+  }
+  
