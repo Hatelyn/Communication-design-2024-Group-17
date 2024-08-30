@@ -1,3 +1,36 @@
-*{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: lightgrey;
+    font-family: Arial, sans-serif;
 }
+
+
+
+.parallax {
+    background-image: url('placeholder-image.jpg');
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+button{
+    font-size: 40px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
