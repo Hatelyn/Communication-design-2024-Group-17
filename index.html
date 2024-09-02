@@ -9,17 +9,23 @@
 </head>
 <body>
     <header>
-        <div class="topnav">
-            <a href="#home" class="active">Gruppe 17</a>
-            <div id="myLinks">
-              <a href="#news">Article</a>
-              <a href="#contact">Article</a>
-              <a href="#about">Article</a>
+        <h1>Gruppe 17</h1>
+        <div id="menu">
+            <ul>
+                <li><a href="#">article</a></li>
+                <li><a href="#">article</a></li>
+                <li><a href="#">article</a></li>
+                <li><a href="#">article</a></li>
+        </div>
+        <li class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars"></i></button>
+            <div class="dropdown-content">
+                <a href="#">article</a>
+                <a href="#">article</a>
+                <a href="#">article</a>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div>
+        </li>
+    </ul>
     </header>
     
     <main id="main">
@@ -28,36 +34,37 @@
         <article id="main">
             <h1>Article 1</h1>
             <p>Hello it's me</p>
-            <img src="placeholder-image.jpg" alt="placeholder" id="img1">
+            <img src="red panda.jpeg" alt="placeholder" id="img1">
             <p><button id="button">Click me</button></p>
 
 
         </article>
-        <section class="parallax"></section>
-        <section class="parallax"></section>
+        <section class="parallax2"></section>
 
         <article id="main">
             <h1>Article 2</h1>
             <p>Hello it's me</p>
-            <img src="placeholder-image.jpg" alt="placeholder" id="img1">
+            <img src="red panda.jpeg" alt="placeholder" id="img1">
             <p><button id="button">Click me</button></p>
         </article>
-        <section class="parallax"></section>
+        <section class="parallax2"></section>
     </main>
     
     <footer id="footer">
         <p>Philip Martine Ikram Kinga 2024</p>
     </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var dropdown = document.querySelector('.dropdown');
+        var dropbtn = dropdown.querySelector('.dropbtn');
 
-    <script>
-        function myFunction() {
-          var x = document.getElementById("myLinks")
-          if (x.style.display === "block") {
-            x.style.display = "none"
-          } else {
-            x.style.display = "block"
-          }
-        }
-        </script>
+        dropbtn.addEventListener('click', function() {
+            var dropdownContent = dropdown.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        });
+    });
+</script>
+
+
 </body>
 </html>
