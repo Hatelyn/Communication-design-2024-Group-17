@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <h1>Group 17</h1>
-        <nav id="menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Article 1</a></li>
-                <li><a href="#">Article 2</a></li>
-                <li><a href="#">Article 3</a></li>
-                <li><a href="#">Article 4</a></li>               
-            </ul>
-        </nav>
+        <div class="topnav">
+            <a href="#home" class="active">Gruppe 17</a>
+            <div id="myLinks">
+              <a href="#news">Article</a>
+              <a href="#contact">Article</a>
+              <a href="#about">Article</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
     </header>
     
     <main id="main">
@@ -26,7 +28,7 @@
         <article id="main">
             <h1>Article 1</h1>
             <p>Hello it's me</p>
-            <img src="placeholder-image.jpg" alt="placeholder">
+            <img src="placeholder-image.jpg" alt="placeholder" id="img1">
             <p><button id="button">Click me</button></p>
 
 
@@ -37,7 +39,7 @@
         <article id="main">
             <h1>Article 2</h1>
             <p>Hello it's me</p>
-            <img src="placeholder-image.jpg" alt="placeholder">
+            <img src="placeholder-image.jpg" alt="placeholder" id="img1">
             <p><button id="button">Click me</button></p>
         </article>
         <section class="parallax"></section>
@@ -46,5 +48,16 @@
     <footer id="footer">
         <p>Philip Martine Ikram Kinga 2024</p>
     </footer>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks")
+          if (x.style.display === "block") {
+            x.style.display = "none"
+          } else {
+            x.style.display = "block"
+          }
+        }
+        </script>
 </body>
 </html>
