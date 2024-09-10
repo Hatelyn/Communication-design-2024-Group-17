@@ -75,7 +75,7 @@ header h1 {
 }
 
 #layer2 {
-    background: url('./img/layer2.webp');
+    background: url('./img/layer2.jpg');
     height: 500px; 
     background-attachment: fixed;
     background-size: cover;
