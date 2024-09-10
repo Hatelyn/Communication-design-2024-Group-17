@@ -1,3 +1,8 @@
+body {
+    background-color: black;
+    color: white;
+}
+
 header {
     background-color: #333;
     color: white;
@@ -44,15 +49,15 @@ header h1 {
     position: relative;
     text-align: center;
     z-index: 1;
+    background-color: black;
 }
 
 .parallax {
-    height: 300px; 
-    background: url('panda\ red.jpg') no-repeat center center;
+    height: auto; 
+    background: url('remmen.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
-    text-align: center;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -61,19 +66,79 @@ header h1 {
 
 .parallax2 {
     height: 300px; 
-    background: url('different\ panda.jpg') no-repeat center center;
-    background-attachment: fixed;
-    background-size: cover; 
+    background: url('fire.png') no-repeat center center;
+    background-size: contain;
+    /*background-attachment: fixed;*/
     margin: 0;
-    text-align: center;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     position: relative;
     width: 100%;
 
 }
 
+.parallax3 {
+    height: 800px; 
+    background: url('firetruck.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+}
 
+#phone {
+    height: 100px;
+    width: auto;
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    z-index:2;
+    margin: 0;
+    padding: 0;
+    animation: ring 0.5s infinite;
+}
+
+@keyframes ring {
+    0% {transform: rotate(20deg);}
+    25% {transform: rotate(0deg);}
+    50% {transform: rotate(-20deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.spam{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.alarm{
+    height: 100px;
+    margin: 20px;
+    flex-basis: 34%;
+}
+
+.intro {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+}
+
+.popup {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    margin: 20px;
+    flex-basis: 34%;
+}
+
+.float {
+    margin: 0; 
+    padding: 4rem; 
+    background-color: rgba(29, 29, 29, 0.3);
+}
 
 article h1 {
     font-size: 20px;
@@ -188,11 +253,13 @@ article p {
     .dropdown {
         display: none;
     }
-    .parallax {
-        height: 200px;
-    }
 
     .parallax2 {
+        background-size: cover;
+    }
+
+    .alarm{
         height: 200px;
+        max-width: 34%;
     }
 }
