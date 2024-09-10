@@ -45,7 +45,6 @@ header h1 {
 }
 
 .main {
-    padding: 2px;
     position: relative;
     text-align: center;
     background-color: black;
@@ -64,7 +63,7 @@ header h1 {
 }
 
 #layer1 {
-    background: url('./img/layer1.webp');
+    background: url('./img/layer1.JPG');
     height: 500px; 
     background-attachment: fixed;
     background-size: cover;
@@ -76,7 +75,7 @@ header h1 {
 }
 
 #layer2 {
-    background: url('./img/layer2.JPG');
+    background: url('./img/layer2.webp');
     height: 500px; 
     background-attachment: fixed;
     background-size: cover;
