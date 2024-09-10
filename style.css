@@ -53,8 +53,7 @@ header h1 {
 }
 
 .parallax {
-    height: auto; 
-    background: url('./img/header.JPG') no-repeat center center;
+    height: 500px; 
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -64,23 +63,9 @@ header h1 {
     width: 100%;
 }
 
-.parallax2 {
-    height: 300px; 
-    background: url('./img/fire.png') no-repeat center center;
-    background-size: contain;
-    /*background-attachment: fixed;*/
-    margin: 0;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    position: relative;
-    width: 100%;
-
-}
-
-.parallax3 {
-    height: 800px; 
-    background: url('./img/firetruck.jpg') no-repeat center center;
-    <img src="./img/fire_truck_kveld.webp">
+#layer1 {
+    background: url('./img/layer1.webp') no-repeat center center;
+    height: 500px; 
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -90,9 +75,21 @@ header h1 {
     width: 100%;
 }
 
-.parallax4 {
-    height: 600px; 
-    background: url('./img/fire_truck_kveld.webp') no-repeat center center;
+#layer2 {
+    background: url('./img/layer2.JPG') no-repeat center center;
+    height: 500px; 
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+}
+
+#layer3 {
+    background: url('./img/layer3.JPG') no-repeat center center;
+    height: 500px; 
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -100,6 +97,55 @@ header h1 {
     background-position: left;
     position: relative;
     width: 100%;
+}
+
+#layer4 {
+    background: url('./img/layer4.JPG') no-repeat center center;
+    height: 500px; 
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    width: 100%;
+}
+
+#layer5 {
+    background: url('./img/layer5.JPG') no-repeat center center;
+    height: 500px; 
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    width: 100%;
+}
+
+#layer6 {
+    background: url('./img/layer6.JPG') no-repeat center center;
+    height: 500px; 
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    width: 100%;
+}
+
+#fire {
+    background: url('./img/fire.png') no-repeat center center;
+    height: 500px; 
+    background-attachment: fixed;
+    background-size: contain;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: relative;
+    width: 100%;
+    background-size: contain;
 }
 
 #phone {
@@ -225,10 +271,7 @@ article p {
 }
 
 #test{
-    padding: 2px;
-    position: relative;
-    text-align: center;
-    background-color: black;
+    
     display: flex;
 }
 
