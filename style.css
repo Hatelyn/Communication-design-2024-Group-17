@@ -44,7 +44,7 @@ header h1 {
     background-color: #555;
 }
 
-#main {
+.main {
     padding: 2px;
     position: relative;
     text-align: center;
@@ -54,7 +54,7 @@ header h1 {
 
 .parallax {
     height: auto; 
-    background: url('./img/remmen.jpg') no-repeat center center;
+    background: url('./img/header.JPG') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -80,11 +80,24 @@ header h1 {
 .parallax3 {
     height: 800px; 
     background: url('./img/firetruck.jpg') no-repeat center center;
+    <img src="./img/fire_truck_kveld.webp">
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    width: 100%;
+}
+
+.parallax4 {
+    height: 600px; 
+    background: url('./img/fire_truck_kveld.webp') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: left;
     position: relative;
     width: 100%;
 }
@@ -126,7 +139,6 @@ header h1 {
     background-color: black;
     color: white;
     padding: 2rem;
-    background-image: url(./img/fire_truck_kveld.webp);
     background-size: cover;
     background-position: center;
 }
@@ -159,9 +171,8 @@ article p {
     font-size: 16px;
 }
 
-#img1 {
-    width: 100%;
-    height: auto;
+.img1 {
+    height: 200px;
     display: block;
     margin: 10px 0;
 }
@@ -214,10 +225,14 @@ article p {
 }
 
 #test{
+    padding: 2px;
+    position: relative;
+    text-align: center;
+    background-color: black;
     display: flex;
 }
 
-#imgtest{
+.imgtest{
     height: 120px;
     width: 120px;
     margin-right: 10px;
@@ -293,6 +308,6 @@ article p {
 
     }
     .intro{
-        padding: 10rem;
+        padding: 4rem;
     }
 }
