@@ -234,6 +234,8 @@ article p {
     display: none;
 }
 
+
+
 @media (min-width: 768px) {
     #menu {
         display: flex;
@@ -282,5 +284,15 @@ article p {
     .alarm{
         height: 200px;
         max-width: 34%;
+    }
+    #imgtest{
+        height: 450px;
+        width: 450px;
+        margin-right: 10px;
+        margin-left: 12px;
+
+    }
+    .intro{
+        padding: 10rem;
     }
 }
