@@ -120,10 +120,15 @@ header h1 {
     flex-basis: 34%;
 }
 
+
+
 .intro {
     background-color: black;
     color: white;
     padding: 2rem;
+    background-image: url(./img/fire_truck_kveld.webp);
+    background-size: cover;
+    background-position: center;
 }
 
 .popup {
