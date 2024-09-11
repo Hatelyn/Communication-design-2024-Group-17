@@ -5,7 +5,9 @@ body {
 
 body h1 {
     font-size: 24px;
-    padding: 2rem;
+    padding: 300px 0;
+    margin: 20px;
+    text-align: center;
 }
 
 body h2 {
@@ -189,23 +191,9 @@ article {
     width: 100%;
 }
 
-#fire {
-    background: url('./img/fire.png');
-    height: 300px; 
-    background-attachment: fixed;
-    background-size: contain;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    position: relative;
-    width: 100%;
-    background-size: contain;
-    padding-bottom: 1.5rem;
-}
-
 /*animation*/
 
-#phone {
+#bucket {
     height: 100px;
     width: auto;
     position: fixed;
