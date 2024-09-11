@@ -283,9 +283,11 @@ article {
 }
 
 #cake-diagram {
-    height: 200px;
+    height: 225px;
+    width: 300px;
     display: block;
     margin: 10px 0;
+    margin-left: 60px;
 }
 
 /*footer*/
@@ -380,5 +382,12 @@ article {
         margin-right: 10px;
         margin-left: 12px;
 
+    }
+    #cake-diagram{
+    height: 600px;
+    width: 780px;
+    display: block;
+    margin: 10px 0;
+    margin-left: 25%;
     }
 }
