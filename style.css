@@ -15,6 +15,7 @@ body h2 {
 
 body p {
     font-size: 16px;
+    margin: 20px;
 }
 
 header {
@@ -99,6 +100,10 @@ header p{
 }
 */
 
+article {
+    min-height: 750px;
+}
+
 /*parallax*/
 
 .parallax {
@@ -137,8 +142,8 @@ header p{
 }
 
 #layer3 {
-    background: url('./img/layer3.JPG');
-    height: 500px; 
+    background: url('./img/layer3.jpg');
+    height: 800px; 
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -155,14 +160,14 @@ header p{
     background-size: cover;
     margin: 0;
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
     position: relative;
     width: 100%;
 }
 
 #layer5 {
     background: url('./img/layer5.JPG');
-    height: 1000px; 
+    height: 500px; 
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -174,7 +179,7 @@ header p{
 
 #layer6 {
     background: url('./img/layer6.JPG');
-    height: 500px; 
+    height: 1000px; 
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -250,26 +255,46 @@ header p{
     background-color: rgba(29, 29, 29, 0.6);
 }
 
+/*photos css*/
 
+.panel-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.img1 {
+.panel {
+    max-width: 300px;
+    margin: 10px;
+}
+
+.panel2 {
+    height: 600px;
+    max-width: 350px;
+    width: auto;
+    margin: 10px;
+}
+
+.students-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.person{
+    height: 120px;
+    width: 120px;
+}
+
+#cake-diagram {
     height: 200px;
     display: block;
     margin: 10px 0;
 }
 
-
-#test{
-    
-    display: flex;
+/*footer*/
+#footer {
+    padding: 0.5rem;
 }
-
-.imgtest{
-    height: 120px;
-    width: 120px;
-    margin-right: 10px;
-}
-
 
 
 
@@ -333,7 +358,16 @@ header p{
         height: 200px;
         max-width: 34%;
     }
-    .imgtest{
+
+    .panel {
+        max-width: 600px;
+    }
+    
+    .panel2 {
+        max-width: 500px;
+    }
+
+    .person{
         height: 450px;
         width: 450px;
         margin-right: 10px;
