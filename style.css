@@ -288,6 +288,10 @@ article {
     margin-left: 60px;
 }
 
+#thanks {
+    text-align: center;
+}
+
 /*footer*/
 #footer p {
     padding: 0;
