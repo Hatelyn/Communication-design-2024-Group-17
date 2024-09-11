@@ -1,6 +1,7 @@
 body {
     background-color: black;
     color: white;
+    cursor: url(./img/flame_smol.png), auto;
 }
 
 body h1 {
