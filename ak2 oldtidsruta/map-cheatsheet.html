@@ -93,6 +93,7 @@
         { 
             coords: [59.21198, 11.16341],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 1 Title', // New title property
             text: 'This is point 1 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -101,6 +102,7 @@
         { 
             coords: [59.21494275647236, 11.16766089114536],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 2 Title', // New title property
             text: 'This is point 2 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' },
@@ -110,6 +112,7 @@
         { 
             coords: [59.20223446771177, 11.15760418483102],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 3 Title', // New title property
             text: 'This is point 3 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' },
@@ -119,6 +122,7 @@
         { 
             coords: [59.205652949528684, 11.132202983649153],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 4 Title', // New title property
             text: 'This is point 4 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -127,6 +131,7 @@
         { 
             coords: [59.217647646882675, 11.076662168465404],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 5 Title', // New title property
             text: 'This is point 5 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -135,6 +140,7 @@
         { 
             coords: [59.219684093721845, 11.067617857851939],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 6 Title', // New title property
             text: 'This is point 6 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -143,6 +149,7 @@
         { 
             coords: [59.21589238276761, 11.01013788064154],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 7 Title', // New title property
             text: 'This is point 7 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -151,6 +158,7 @@
         { 
             coords: [59.22121778665771, 11.007536596149324],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 8 Title', // New title property
             text: 'This is point 8 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -159,6 +167,7 @@
         { 
             coords: [59.295006634126295, 11.042246601870682],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 9 Title', // New title property
             text: 'This is point 9 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
@@ -167,6 +176,7 @@
         { 
             coords: [59.31841582076133, 11.042887145545418],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 10 Title', // New title property
             text: 'This is point 10 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug', text: 'Description for image 1' }
@@ -175,28 +185,30 @@
         { 
             coords: [59.26875585251406, 11.133807164300155],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 11 Title', // New title property
             text: 'This is point 11 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
             ]
         },
-            { 
-                coords: [59.24245252972301, 11.151880647495503],
-                img: './images/Shipgrave-jellhaug.jpg',
-                text: 'This is point 12 description.',
-                images: [
-                    { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
-                ]
-            },
+        { 
+            coords: [59.24245252972301, 11.151880647495503],
+            img: './images/Shipgrave-jellhaug.jpg',
+            title: 'Point 12 Title', // New title property
+            text: 'This is point 12 description.',
+            images: [
+                { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
+            ]
+        },
         { 
             coords: [59.14780322016713, 11.251696285403911],
             img: './images/Shipgrave-jellhaug.jpg',
+            title: 'ShipGrave', // New title property
             text: 'This is point 13 description.',
             images: [
-                { src: './images/Shipgrave-jellhaug.jpg', text: 'The Shipgrave' },
-                { src: './images/Shipgrave-jellhaug.jpg', text: 'The Ship' }
+                { src: './images/Shipgrave-jellhaug.jpg', text: 'A golden pendant was found at Jellhaug in 2015 and was dated to the 5th century, this being the start of uncovering 5 longhouses, traces of fences, 13 burial mounds and seemingly a ship in one of the mounds, with excavations to the ship it revealed that the ship is 21meters in length and 5 meters across.' }
             ]
-        }
+        },
     ];
 
     let currentImages = [];
@@ -208,24 +220,39 @@
         mapMarker.bindPopup(marker.text);
 
         mapMarker.on('click', () => {
-            currentImages = marker.images; // Update currentImages with the marker's images
-            currentImageIndex = 0; // Reset index
-            openModal(currentImages[currentImageIndex].src, currentImages[currentImageIndex].text);
-        });
+    currentImages = marker.images; // Update currentImages with the marker's images
+    currentImageIndex = 0; // Reset index
+    openModal(currentImages[currentImageIndex].src, currentImages[currentImageIndex].text, marker.title); // Pass the title
+});
+
     });
 
-    function openModal(imageSrc, imageText) {
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modalImage');
-        const modalText = document.getElementById('modalText');
+    function openModal(imageSrc, imageText, title) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const modalText = document.getElementById('modalText');
+    const modalTitle = document.createElement('h3'); // Create a new element for the title
 
-        modal.style.display = 'block';
-        modalImage.src = imageSrc;
-        modalText.textContent = imageText;
+    modal.style.display = 'block';
+    modalImage.src = imageSrc;
+    modalText.textContent = imageText;
 
-        // Set up navigation for images
-        setupImageNavigation();
+    // Set the title
+    modalTitle.textContent = title; // Set the title text
+    modalTitle.className = 'modal-title'; // Add a class for styling (optional)
+    
+    // Append title to modal content
+    const modalContent = modal.querySelector('.modal-content');
+    // Clear previous titles to avoid duplicates
+    const existingTitle = modalContent.querySelector('.modal-title');
+    if (existingTitle) {
+        modalContent.removeChild(existingTitle);
     }
+    modalContent.insertBefore(modalTitle, modalText); // Insert title above the text
+
+    // Set up navigation for images
+    setupImageNavigation();
+}
 
     function setupImageNavigation() {
         const prevButton = document.getElementById('prevButton');
