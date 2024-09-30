@@ -1,0 +1,248 @@
+/* Mobile-first styles */
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #007BFF;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Map Section Styling */
+#mapSection {
+    width: 100%;
+    padding: 0;
+}
+
+#mapContainer {
+    width: 100vw;
+    height: 60vh; /* Set height for mobile */
+}
+
+/* Information Section Styling */
+#infoSection {
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+#infoSection h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#infoSection p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#infoSection h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#infoSection ul {
+    padding-left: 20px;
+}
+
+#infoSection ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Map marker and popup styling */
+.custom-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.popup-content img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.popup-content p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    overflow: hidden; /* Prevent scrolling on the main page */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Width of the modal content */
+    max-width: 600px; /* Max width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center text */
+}
+
+.modal-content img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.modal-navigation {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between buttons */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.modal-button {
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent background */
+    color: #fff;
+    border: none;
+    padding: 10px 15px; /* Padding for buttons */
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+    margin: 10px; /* Margin for spacing */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.modal-button:hover {
+    background-color: rgba(0, 123, 255, 1); /* Full opacity on hover */
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* New styles for scrollable description */
+.modal-description {
+    max-height: 300px; /* Set a max height for the description */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin-top: 10px; /* Add some margin for spacing */
+}
+
+.modal-content p {
+    margin: 0;
+    font-size: 16px; /* Font size for description */
+}
+
+/* Dots container */
+#dotsContainer {
+    text-align: center; /* Center the dots */
+    margin-top: 10px; /* Add some space above the dots */
+}
+
+/* Leaflet control attribution */
+.leaflet-control-attribution {
+    position: fixed; 
+    bottom: 10px;    
+    right: 10px;    
+    background: white; 
+    padding: 5px;    
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    z-index: 1000; 
+}
+
+
+/* Media queries for larger screens */
+@media (min-width: 600px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    #mapContainer {
+        height: 70vh; /* Adjust height for larger screens */
+    }
+
+    #infoSection {
+        padding: 30px;
+    }
+
+    #infoSection h2 {
+        font-size: 26px;
+    }
+
+    #infoSection p {
+        font-size: 18px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        top: 40%; /* Adjust position for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    #mapContainer {
+        height: 80vh; /* Adjust height for larger screens */
+    }
+
+    footer p {
+        font-size: 18px;
+    }
+
+    .modal-content {
+        top: 30%; /* Adjust position for larger screens */
+    }
+}

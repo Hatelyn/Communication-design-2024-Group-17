@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Oldtisruta - Map & Info</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <h1>Discover Oldtisruta</h1>
+    <p>A historical route with significant landmarks and scenic views.</p>
+</header>
+
+<!-- Map Section -->
+<section id="mapSection">
+    <div id="mapContainer" style="height: 600px;"></div>
+</section>
+
+<!-- Information Section -->
+<section id="infoSection">
+    <h2>About Oldtisruta</h2>
+    <p>Oldtisruta is a historical route that takes you through some of the most beautiful and culturally significant places in the region. From ancient ruins to breathtaking landscapes, every stop tells a story.</p>
+
+    <h3>Notable Stops Along the Route</h3>
+    <ul>
+        <li><strong>Stop 1:</strong> Ancient Castle - A medieval fortress.</li>
+        <li><strong>Stop 2:</strong> Scenic Overlook - Perfect for nature lovers.</li>
+        <li><strong>Stop 3:</strong> Local Market - A vibrant hub of culture and commerce.</li>
+    </ul>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2024 Oldtisruta Tours. All rights reserved.</p>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Expanded image">
+        <div class="modal-navigation">
+            <button id="prevButton" class="modal-button">❮</button>
+            <button id="nextButton" class="modal-button">❯</button>
+        </div>
+        <div id="dotsContainer"></div>
+        <p id="modalText">Description of the image.</p>
+    </div>
+</div>
+
+<script>
+    const centerLat = 59.21198;
+    const centerLong = 11.16341;
+
+    let mapMain = L.map('mapContainer', {
+        center: [centerLat, centerLong],
+        zoom: 13
+    });
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '<a href="https://openstreetmap.org/copyright">Open Street Map</a>'
+    }).addTo(mapMain);
+
+    // Define path coordinates
+    const pathCoordinates = [
+        [59.21198, 11.16341],
+        [59.21494275647236, 11.16766089114536],
+        [59.20223446771177, 11.15760418483102],
+        [59.205652949528684, 11.132202983649153],
+        [59.217647646882675, 11.076662168465404],
+        [59.219684093721845, 11.067617857851939],
+        [59.21589238276761, 11.01013788064154],
+        [59.22121778665771, 11.007536596149324],
+        [59.295006634126295, 11.042246601870682],
+        [59.31841582076133, 11.042887145545418],
+        [59.26875585251406, 11.133807164300155],
+        [59.24245252972301, 11.151880647495503],
+        [59.14780322016713, 11.251696285403911]
+    ];
+
+    // Adding path to the map
+    const path = L.polyline(pathCoordinates, { color: 'blue' }).addTo(mapMain);
+
+    const markerData = [
+        { 
+            coords: [59.21198, 11.16341],
+            img: 'kake.jfif',
+            text: 'This is point 1 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.21494275647236, 11.16766089114536],
+            img: 'kake.jfif',
+            text: 'This is point 2 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' },
+                { src: 'kake2.jpg', text: 'Description for image 2' }
+            ]
+        },
+        { 
+            coords: [59.20223446771177, 11.15760418483102],
+            img: 'kake.jfif',
+            text: 'This is point 3 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' },
+                { src: 'image3.jpg', text: 'Description for image 2' }
+            ]
+        },
+        { 
+            coords: [59.205652949528684, 11.132202983649153],
+            img: 'kake.jfif',
+            text: 'This is point 4 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.217647646882675, 11.076662168465404],
+            img: 'kake.jfif',
+            text: 'This is point 5 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.219684093721845, 11.067617857851939],
+            img: 'kake.jfif',
+            text: 'This is point 6 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.21589238276761, 11.01013788064154],
+            img: 'kake.jfif',
+            text: 'This is point 7 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.22121778665771, 11.007536596149324],
+            img: 'kake.jfif',
+            text: 'This is point 8 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.295006634126295, 11.042246601870682],
+            img: 'kake.jfif',
+            text: 'This is point 9 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.31841582076133, 11.042887145545418],
+            img: 'kake.jfif',
+            text: 'This is point 10 description.',
+            images: [
+                { src: './images/Shipgrave-jellhaug', text: 'Description for image 1' }
+            ]
+        },
+        { 
+            coords: [59.26875585251406, 11.133807164300155],
+            img: 'kake.jfif',
+            text: 'This is point 11 description.',
+            images: [
+                { src: 'kake.jfif', text: 'Description for image 1' }
+            ]
+        },
+            { 
+                coords: [59.24245252972301, 11.151880647495503],
+                img: 'kake.jfif',
+                text: 'This is point 12 description.',
+                images: [
+                    { src: 'kake.jfif', text: 'Description for image 1' }
+                ]
+            },
+        { 
+            coords: [59.14780322016713, 11.251696285403911],
+            img: 'kake.jfif',
+            text: 'This is point 13 description.',
+            images: [
+                { src: './images/Shipgrave-jellhaug.jpg', text: 'The Shipgrave' },
+                { src: './images/Shipgrave-jellhaug.jpg', text: 'The Ship' }
+            ]
+        }
+    ];
+
+    let currentImages = [];
+    let currentImageIndex = 0;
+
+    // Create markers for all coordinates
+    markerData.forEach((marker) => {
+        const mapMarker = L.marker(marker.coords).addTo(mapMain);
+        mapMarker.bindPopup(marker.text);
+
+        mapMarker.on('click', () => {
+            currentImages = marker.images; // Update currentImages with the marker's images
+            currentImageIndex = 0; // Reset index
+            openModal(currentImages[currentImageIndex].src, currentImages[currentImageIndex].text);
+        });
+    });
+
+    function openModal(imageSrc, imageText) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        const modalText = document.getElementById('modalText');
+
+        modal.style.display = 'block';
+        modalImage.src = imageSrc;
+        modalText.textContent = imageText;
+
+        // Set up navigation for images
+        setupImageNavigation();
+    }
+
+    function setupImageNavigation() {
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const dotsContainer = document.getElementById('dotsContainer');
+        dotsContainer.innerHTML = ''; // Clear dots
+
+        // Create dots for each image
+        currentImages.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.onclick = () => showImage(index);
+            dotsContainer.appendChild(dot);
+        });
+
+        prevButton.onclick = () => {
+            currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+            showImage(currentImageIndex);
+        };
+
+        nextButton.onclick = () => {
+            currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+            showImage(currentImageIndex);
+        };
+
+        showImage(currentImageIndex);
+    }
+
+    function showImage(index) {
+        const modalImage = document.getElementById('modalImage');
+        const modalText = document.getElementById('modalText');
+        const dots = document.querySelectorAll('.dot');
+
+        modalImage.src = currentImages[index].src;
+        modalText.textContent = currentImages[index].text;
+
+        // Update active dot
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === index);
+        });
+    }
+
+    // Close modal
+    document.querySelector('.modal-close').onclick = () => {
+        document.getElementById('modal').style.display = 'none';
+    };
+</script>
+
+</body>
+</html>
