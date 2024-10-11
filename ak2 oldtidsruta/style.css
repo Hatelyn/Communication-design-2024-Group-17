@@ -211,11 +211,6 @@ footer p {
     padding-left: 5%;          
 }
 
-
-
-
-
-
 .leaflet-control-attribution {
     position: fixed; 
     bottom: 10px;    
@@ -261,6 +256,20 @@ footer p {
         top: 40%; 
     }
 }
+.custom-icon {
+    text-align: center;
+}
+
+.custom-icon div {
+    background-color: red; 
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: white; 
+    font-weight: bold;
+}
+
 
 @media (min-width: 1024px) {
     #mapContainer {
@@ -276,10 +285,10 @@ footer p {
         margin-top: 100px;
     }
     .Introduction {
-        max-width: 800px;         /* Set a maximum width for the introduction section */
-        margin: 0 auto;           /* Center the section on the screen */
-        text-align: left;         /* Keep text aligned to the left */
-        padding-left: 30%;            /* Optional: Add padding around the text for better spacing */
+        max-width: 800px;         
+        margin: 0 auto;          
+        text-align: left;        
+        padding-left: 30%;            
     }
     
 }

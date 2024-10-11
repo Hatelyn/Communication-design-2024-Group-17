@@ -12,7 +12,7 @@ header {
 
 .card-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     padding: 20px;
 }
 
@@ -20,18 +20,18 @@ header {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin: 10px 0;
+    margin: 10px 0; 
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.2s; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
     width: 90%; 
-    max-width: 350px; 
+    max-width: 350px;
     margin-left: auto; 
     margin-right: auto; 
 }
 
 .card:hover {
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
 .card h2 {
@@ -39,32 +39,30 @@ header {
 }
 
 .card a {
-    text-decoration: none; 
-    color: inherit; 
-    display: block; 
-    height: 100%; 
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
 }
 
-
-
-
 .card img {
-    height: 200px;
-    width: 300px;
-    object-fit: cover; 
-    border-radius: 8px; 
-    margin-bottom: 10px; 
+    height: 250px;
+    width: 100%; 
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 
 @media (min-width: 768px) {
     .card-container {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
     }
+    
     .card {
-        flex: 1;
-        margin: 0 60px; 
-        max-width: 300px; 
+        width: calc(45% - 20px); 
+        margin: 10px; 
     }
 }

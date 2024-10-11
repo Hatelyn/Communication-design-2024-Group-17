@@ -8,28 +8,7 @@
     <title>Firefighters against the false alarms</title>
 </head>
 <body>
-<header>
-    <p>Group 17 Communication design</p>
-    <nav id="desktop">
-        <ul>
-            <li><a href="#">False alarms</a></li>
-            <li><a href="#">article2</a></li>
-            <li><a href="#">article3</a></li>
-            <li><a href="#">article4</a></li>
-        </ul>
-    </nav>
-    <nav class="dropdown">
-        <button class="dropbtn"><i class="fa fa-bars"></i></button>
-        <div class="dropdown-content">
-            <ul>
-                <li><a href="#">False alarms</a></li>
-                <li><a href="#">article2</a></li>
-                <li><a href="#">article3</a></li>
-                <li><a href="#">article4</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+
 <main>
     <h1>Firefighters against the false alarms</h1>
 
@@ -97,14 +76,14 @@
 </footer>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const dropdown = document.querySelector('.dropdown');
-        const dropbtn = dropdown.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown')
+        const dropbtn = dropdown.querySelector('.dropbtn')
 
         dropbtn.addEventListener('click', function() {
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
-            dropdownContent.classList.toggle('show');
-        });
-    });
+            const dropdownContent = dropdown.querySelector('.dropdown-content')
+            dropdownContent.classList.toggle('show')
+        })
+    })
 </script>
 </body>
 </html>

@@ -62,17 +62,17 @@
 
 
 <script>
-    const centerLat = 59.21198;
-    const centerLong = 11.16341;
+    const centerLat = 59.24000
+    const centerLong = 11.11341
 
     let mapMain = L.map('mapContainer', {
         center: [centerLat, centerLong],
-        zoom: 13
-    });
+        zoom: 10
+    })
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '<a href="https://openstreetmap.org/copyright">Open Street Map</a>'
-    }).addTo(mapMain);
+    }).addTo(mapMain)
 
     // Define path coordinates
     const pathCoordinates = [
@@ -89,10 +89,10 @@
         [59.26875585251406, 11.133807164300155],
         [59.24245252972301, 11.151880647495503],
         [59.14780322016713, 11.251696285403911]
-    ];
+    ]
 
     // Adding path to the map
-    const path = L.polyline(pathCoordinates, { color: 'blue' }).addTo(mapMain);
+    const path = L.polyline(pathCoordinates, { color: 'blue' }).addTo(mapMain)
 
     const markerData = [
         { 
@@ -102,7 +102,7 @@
             text: 'This is point 1 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' }
-            ]
+            ],
         },
         { 
             coords: [59.21494275647236, 11.16766089114536],
@@ -111,7 +111,7 @@
             text: 'This is point 2 description.',
             images: [
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'Description for image 1' },
-                { src: 'kake2.jpg', text: 'Description for image 2' }
+                { src: '#', text: 'Description for image 2' }
             ]
         },
         { 
@@ -215,96 +215,112 @@
                 { src: './images/Shipgrave-jellhaug.jpg', text: 'kake' }
             ]
         },
-    ];
+    ]
+    
 
-    let currentImages = [];
-    let currentImageIndex = 0;
+    let currentImages = []
+    let currentImageIndex = 0
 
     // Create markers for all coordinates
     markerData.forEach((marker) => {
-        const mapMarker = L.marker(marker.coords).addTo(mapMain);
-        mapMarker.bindPopup(marker.text);
+        const mapMarker = L.marker(marker.coords).addTo(mapMain)
+        mapMarker.bindPopup(marker.text)
 
         mapMarker.on('click', () => {
-    currentImages = marker.images; // Update currentImages with the marker's images
-    currentImageIndex = 0; // Reset index
-    openModal(currentImages[currentImageIndex].src, currentImages[currentImageIndex].text, marker.title); // Pass the title
-});
+    currentImages = marker.images // Update currentImages with the marker's images
+    currentImageIndex = 0// Reset index
+    openModal(currentImages[currentImageIndex].src, currentImages[currentImageIndex].text, marker.title) // Pass the title
+})
 
-    });
+    })
 
     function openModal(imageSrc, imageText, title) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modalImage');
-    const modalText = document.getElementById('modalText');
-    const modalTitle = document.createElement('h3'); // Create a new element for the title
+    const modal = document.getElementById('modal')
+    const modalImage = document.getElementById('modalImage')
+    const modalText = document.getElementById('modalText')
+    const modalTitle = document.createElement('h3') // Create a new element for the title
 
-    modal.style.display = 'block';
-    modalImage.src = imageSrc;
-    modalText.textContent = imageText;
+    modal.style.display = 'block'
+    modalImage.src = imageSrc
+    modalText.textContent = imageText
 
     // Set the title
-    modalTitle.textContent = title; // Set the title text
-    modalTitle.className = 'modal-title'; // Add a class for styling (optional)
+    modalTitle.textContent = title // Set the title text
+    modalTitle.className = 'modal-title' // Add a class for styling (optional)
     
     // Append title to modal content
-    const modalContent = modal.querySelector('.modal-content');
+    const modalContent = modal.querySelector('.modal-content')
     // Clear previous titles to avoid duplicates
-    const existingTitle = modalContent.querySelector('.modal-title');
+    const existingTitle = modalContent.querySelector('.modal-title')
     if (existingTitle) {
-        modalContent.removeChild(existingTitle);
+        modalContent.removeChild(existingTitle)
     }
-    modalContent.insertBefore(modalTitle, modalText); // Insert title above the text
+    modalContent.insertBefore(modalTitle, modalText) // Insert title above the text
 
     // Set up navigation for images
-    setupImageNavigation();
+    setupImageNavigation()
 }
 
     function setupImageNavigation() {
-        const prevButton = document.getElementById('prevButton');
-        const nextButton = document.getElementById('nextButton');
-        const dotsContainer = document.getElementById('dotsContainer');
-        dotsContainer.innerHTML = ''; // Clear dots
+        const prevButton = document.getElementById('prevButton')
+        const nextButton = document.getElementById('nextButton')
+        const dotsContainer = document.getElementById('dotsContainer')
+        dotsContainer.innerHTML = ''// Clear dots
 
         // Create dots for each image
         currentImages.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            dot.onclick = () => showImage(index);
-            dotsContainer.appendChild(dot);
-        });
+            const dot = document.createElement('span')
+            dot.className = 'dot'
+            dot.onclick = () => showImage(index)
+            dotsContainer.appendChild(dot)
+        })
 
         prevButton.onclick = () => {
-            currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-            showImage(currentImageIndex);
-        };
+            currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length
+            showImage(currentImageIndex)
+        }
 
         nextButton.onclick = () => {
-            currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-            showImage(currentImageIndex);
-        };
+            currentImageIndex = (currentImageIndex + 1) % currentImages.length
+            showImage(currentImageIndex)
+        }
 
-        showImage(currentImageIndex);
+        showImage(currentImageIndex)
     }
 
     function showImage(index) {
-        const modalImage = document.getElementById('modalImage');
-        const modalText = document.getElementById('modalText');
-        const dots = document.querySelectorAll('.dot');
+        const modalImage = document.getElementById('modalImage')
+        const modalText = document.getElementById('modalText')
+        const dots = document.querySelectorAll('.dot')
 
-        modalImage.src = currentImages[index].src;
-        modalText.textContent = currentImages[index].text;
+        modalImage.src = currentImages[index].src
+        modalText.textContent = currentImages[index].text
 
         // Update active dot
         dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === index);
-        });
+            dot.classList.toggle('active', idx === index)
+        })
     }
 
     // Close modal
     document.querySelector('.modal-close').onclick = () => {
-        document.getElementById('modal').style.display = 'none';
-    };
+        document.getElementById('modal').style.display = 'none'
+    }
+    markerData.forEach((marker, index) => {
+    const mapMarker = L.marker(marker.coords).addTo(mapMain)
+    mapMarker.bindPopup(marker.text)
+
+    // Add numbers to markers
+    mapMarker.bindTooltip((index + 1).toString(), { permanent: true, direction: 'top' }).openTooltip()
+
+    mapMarker.on('click', () => {
+        currentImages = marker.images // Update currentImages with the marker's images
+        currentImageIndex = 0 // Reset index
+        openModal(currentImages[currentImageIndex].src, currentImages[currentImageIndex].text, marker.title) // Pass the title
+    })
+})
+
+
 </script>
 
 </body>
